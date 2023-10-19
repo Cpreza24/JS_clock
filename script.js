@@ -12,10 +12,14 @@ console.log(currentHour + ' ' + currentMinute + ' ' + currentSeconds);
 clock.innerHTML = currentHour + ':' + currentMinute + ':' +currentSeconds;
 
 
+// function refreshSeconds() {
+//     setInterval(console.log('The second is ' + currentSeconds))
+//     ,1000
+//     };
 
+let count = 0;
 
-
-
-
-
+setInterval(() => {
+    console.log(currentSeconds++)
+}, 1000);
 
