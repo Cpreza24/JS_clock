@@ -6,20 +6,12 @@ let currentHour = date.getHours();
 let currentMinute = date.getMinutes();
 let currentSeconds = date.getSeconds();
 
-console.log(currentHour + ' ' + currentMinute + ' ' + currentSeconds);
-
-//adding the current time to the clock element
-clock.innerHTML = currentHour + ':' + currentMinute + ':' +currentSeconds;
-
-
-// function refreshSeconds() {
-//     setInterval(console.log('The second is ' + currentSeconds))
-//     ,1000
-//     };
-
-let count = 0;
 
 setInterval(() => {
-    console.log(currentSeconds++)
+    date = new Date();
+    currentHour = date.getHours();
+    currentMinute = date.getMinutes();
+    currentSeconds = date.getSeconds();
+    clock.innerHTML = currentHour + ':' + currentMinute + ':' + currentSeconds;
 }, 1000);
 
