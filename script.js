@@ -15,9 +15,15 @@ function getTime() {
     currentSeconds = date.getSeconds()
 
     if(currentSeconds < 10) {
-        currentSeconds = `0` + currentSeconds;
+        currentSeconds = '0' + currentSeconds;
     } else {
         currentSeconds
+    }
+
+    if(currentMinute < 10) {
+        currentMinute = '0' + currentMinute;
+    } else {
+        currentMinute;
     }
 
     if(currentHour > 12) {
@@ -30,11 +36,9 @@ function getTime() {
     clock.innerHTML = currentHour + ':' + currentMinute + ':' + currentSeconds + ' ' + amPm;
 }
 
-toggleTimeButton.addEventListener('click', function() {
-    // if(currentHour > 12) {
-    //     currentHour = currentHour / 12;
-    // }
-    console.log('button clicked');
+toggleTimeButton.addEventListener('click', function(e) {
+    
+    console.log(toggleTimeButton.classList);
 })
 
 
