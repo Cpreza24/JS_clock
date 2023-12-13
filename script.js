@@ -1,17 +1,47 @@
 let clock = document.querySelector('.clock');
+let toggleTimeButton = document.querySelector('.toggle');
 
 //Variables to get the current hours minutes and seconds
-let date = new Date();
-let currentHour = date.getHours();
-let currentMinute = date.getMinutes();
-let currentSeconds = date.getSeconds();
+    let date = new Date();
+    let currentHour = date.getHours();
+    let currentMinute = date.getMinutes();
+    let currentSeconds = date.getSeconds();
+    let amPm;
 
-
-setInterval(() => {
+function getTime() {
     date = new Date();
     currentHour = date.getHours();
     currentMinute = date.getMinutes();
-    currentSeconds = date.getSeconds();
-    clock.innerHTML = currentHour + ':' + currentMinute + ':' + currentSeconds;
-}, 1000);
+    currentSeconds = date.getSeconds()
 
+    if(currentSeconds < 10) {
+        currentSeconds = `0` + currentSeconds;
+    } else {
+        currentSeconds
+    }
+
+    if(currentHour > 12) {
+        currentHour = currentHour - 12;
+        amPm = 'PM'
+    }  else {
+        amPm = 'AM'
+    }
+
+    clock.innerHTML = currentHour + ':' + currentMinute + ':' + currentSeconds + ' ' + amPm;
+}
+
+toggleTimeButton.addEventListener('click', function() {
+    // if(currentHour > 12) {
+    //     currentHour = currentHour / 12;
+    // }
+    console.log('button clicked');
+})
+
+
+
+onload = getTime();
+
+setInterval(() => {
+    getTime();
+
+}, 1000);
