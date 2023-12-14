@@ -26,7 +26,7 @@ function getTime() {
         currentMinute;
     }
 
-    if(currentHour > 12) {
+    if(currentHour >= 12) {
         currentHour = currentHour - 12;
         amPm = 'PM'
     }  else {
