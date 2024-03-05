@@ -37,6 +37,13 @@ function getTime() {
 }
 
 toggleTimeButton.addEventListener('click', function(e) {
+    if(toggleTimeButton.classList.contains('standard')) {
+        toggleTimeButton.classList.remove('standard');
+        toggleTimeButton.classList.add('military');
+    } else {
+        toggleTimeButton.classList.remove('military');
+        toggleTimeButton.classList.add('standard');
+    }
     
     console.log(toggleTimeButton.classList);
 })
