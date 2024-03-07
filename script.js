@@ -1,12 +1,17 @@
 let clock = document.querySelector('.clock');
 let toggleTimeButton = document.querySelector('.toggle');
+let todaysDate = document.querySelector('.date');
+let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 //Variables to get the current hours minutes and seconds
-    let date = new Date();
-    let currentHour = date.getHours();
-    let currentMinute = date.getMinutes();
-    let currentSeconds = date.getSeconds();
-    let amPm;
+let date = new Date();
+let currentHour = date.getHours();
+let currentMinute = date.getMinutes();
+let currentSeconds = date.getSeconds();
+let currentDay = date.getDate();
+let currentYear = date.getFullYear();
+let currentMonth = date.getMonth();
+let amPm;
 
 toggleTimeButton.addEventListener('click', function(e) {
     if(toggleTimeButton.classList.contains('standard')) {
@@ -16,8 +21,6 @@ toggleTimeButton.addEventListener('click', function(e) {
         toggleTimeButton.classList.remove('military');
         toggleTimeButton.classList.add('standard');
     }
-    
-    console.log(toggleTimeButton.classList, currentHour);
 })
 
 function getTime() {
@@ -53,12 +56,15 @@ function getTime() {
     }
 }
 
+function showDate() {
+    todaysDate.innerHTML = month[currentMonth] + ' ' + currentDay + ', ' + currentYear;
+    console.log(month[currentMonth] + ' ' + currentDay + ' ' + currentYear);
+};
 
-
-
+console.log(month.length, month[2]);
 
 onload = getTime();
-
+showDate()
 setInterval(() => {
     getTime();
 
