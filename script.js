@@ -8,11 +8,23 @@ let toggleTimeButton = document.querySelector('.toggle');
     let currentSeconds = date.getSeconds();
     let amPm;
 
+toggleTimeButton.addEventListener('click', function(e) {
+    if(toggleTimeButton.classList.contains('standard')) {
+        toggleTimeButton.classList.remove('standard');
+        toggleTimeButton.classList.add('military');
+    } else {
+        toggleTimeButton.classList.remove('military');
+        toggleTimeButton.classList.add('standard');
+    }
+    
+    console.log(toggleTimeButton.classList, currentHour);
+})
+
 function getTime() {
     date = new Date();
     currentHour = date.getHours();
     currentMinute = date.getMinutes();
-    currentSeconds = date.getSeconds()
+    currentSeconds = date.getSeconds();
 
     if(currentSeconds < 10) {
         currentSeconds = '0' + currentSeconds;
@@ -33,20 +45,15 @@ function getTime() {
         amPm = 'AM'
     }
 
-    clock.innerHTML = currentHour + ':' + currentMinute + ':' + currentSeconds + ' ' + amPm;
+    if(toggleTimeButton.classList.contains('standard')) {
+        clock.innerHTML = currentHour + ':' + currentMinute + ':' + currentSeconds + ' ' + amPm;
+    } else if(toggleTimeButton.classList.contains('military')) {
+        currentHour = currentHour + 12;
+        clock.innerHTML = currentHour + ':' + currentMinute + ':' + currentSeconds
+    }
 }
 
-toggleTimeButton.addEventListener('click', function(e) {
-    if(toggleTimeButton.classList.contains('standard')) {
-        toggleTimeButton.classList.remove('standard');
-        toggleTimeButton.classList.add('military');
-    } else {
-        toggleTimeButton.classList.remove('military');
-        toggleTimeButton.classList.add('standard');
-    }
-    
-    console.log(toggleTimeButton.classList);
-})
+
 
 
 
