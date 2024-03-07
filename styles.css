@@ -1,7 +1,11 @@
-body {
-    background-color: grey;
+.titleDiv {
+    text-align: center;
 }
 
-h1 {
-    color: Blue;
+.clockDiv {
+    text-align: center;
+}
+
+.dateDiv {
+    text-align: center;
 }

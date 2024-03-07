@@ -58,10 +58,11 @@ function getTime() {
 
 function showDate() {
     todaysDate.innerHTML = month[currentMonth] + ' ' + currentDay + ', ' + currentYear;
-    console.log(month[currentMonth] + ' ' + currentDay + ' ' + currentYear);
 };
 
-console.log(month.length, month[2]);
+
+
+
 
 onload = getTime();
 showDate()
