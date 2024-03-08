@@ -17,11 +17,11 @@ toggleTimeButton.addEventListener('click', function(e) {
     if(toggleTimeButton.classList.contains('standard')) {
         toggleTimeButton.classList.remove('standard');
         toggleTimeButton.classList.add('military');
-        toggleTimeButton.innerHTML = 'Standard';
+        toggleTimeButton.innerHTML = 'Standard Time';
     } else {
         toggleTimeButton.classList.remove('military');
         toggleTimeButton.classList.add('standard');
-        toggleTimeButton.innerHTML = 'Military';
+        toggleTimeButton.innerHTML = 'Military Time';
     }
 })
 
