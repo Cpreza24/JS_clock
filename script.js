@@ -69,4 +69,4 @@ showDate()
 setInterval(() => {
     getTime();
 
-}, 1000);
+}, 100);
