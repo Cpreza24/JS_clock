@@ -6,7 +6,7 @@ A simple digital clock made with HTML CSS and Javascipt
 
 Toggle between military time and standard time by clicking the button under the clock.
 
-<img src='sample/clock.png' />
+![](sample/clock.PNG)
 
 ## Author
 
