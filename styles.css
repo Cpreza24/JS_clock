@@ -1,11 +1,36 @@
+body {
+    background-color: #35736D;
+}
+
+
+h1 {
+    color: #C4C4C4;
+    font-size: 50px;
+}
+
 .titleDiv {
+    background-color: #35736D;
+    padding-bottom: 20px;
     text-align: center;
 }
 
+.clock {
+    color: #C4C4C4;
+    font-family: anta;
+    font-size: 75px;
+    padding: 25px;
+}
+
 .clockDiv {
+    position: relative;
     text-align: center;
 }
 
 .dateDiv {
     text-align: center;
+}
+
+.lead {
+    font-size: 23px;
+    color: #C4C4C4;
 }

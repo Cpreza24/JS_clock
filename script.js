@@ -17,12 +17,16 @@ toggleTimeButton.addEventListener('click', function(e) {
     if(toggleTimeButton.classList.contains('standard')) {
         toggleTimeButton.classList.remove('standard');
         toggleTimeButton.classList.add('military');
+        toggleTimeButton.innerHTML = 'Standard';
     } else {
         toggleTimeButton.classList.remove('military');
         toggleTimeButton.classList.add('standard');
+        toggleTimeButton.innerHTML = 'Military';
     }
 })
 
+//Gets the current time and appends a 0 if the time is a single digit. 
+//Also checks to see if the toggle button is standard or military time
 function getTime() {
     date = new Date();
     currentHour = date.getHours();
@@ -49,7 +53,11 @@ function getTime() {
     }
 
     if(toggleTimeButton.classList.contains('standard')) {
-        clock.innerHTML = currentHour + ':' + currentMinute + ':' + currentSeconds + ' ' + amPm;
+        if(currentHour < 10) {
+            clock.innerHTML = '0' + currentHour +  ':' + currentMinute + ':' + currentSeconds + ' ' + amPm;
+        } else {
+            clock.innerHTML = + currentHour + ':' + currentMinute + ':' + currentSeconds + ' ' + amPm;
+        }
     } else if(toggleTimeButton.classList.contains('military')) {
         currentHour = currentHour + 12;
         clock.innerHTML = currentHour + ':' + currentMinute + ':' + currentSeconds
